@@ -1,13 +1,16 @@
-.contenedor{
+.contenedor {
     margin: 5rem;
 }
-.row{
+
+.row {
     display: grid;
-    grid-template-columns: repeat(6,minmax(0,1fr))
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px; /* Ajusta el espacio entre las tarjetas */
 }
+
 .card-container {
     background-color: #ffffff;
-    padding: 1.25rem;
+    padding: 1rem;
     border-radius: 1rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     height: 18rem;
@@ -15,8 +18,8 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 18rem;
-    margin: 5px; 
+    width: 15rem; /* Fijo en 18rem */
+    margin: 1rem; /* Ajusta el espacio entre las tarjetas */
 }
 
 .image-container {
@@ -25,8 +28,7 @@
     align-items: center;
     overflow: hidden;
     border-radius: 1rem;
-    flex-grow: 1;
-    width: 10rem;
+    width: 100%; /* La imagen ocupa el 100% del contenedor */
 }
 
 .logo-img {
@@ -43,7 +45,7 @@
 
 .custom-button {
     padding: 0.5rem 2rem;
-    background-color: rgb(75,85,99);
+    background-color: rgb(75, 85, 99);
     color: #ffffff;
     border: none;
     border-radius: 0.25rem;
@@ -56,6 +58,20 @@
 .custom-button:hover {
     background-color: #d1d5db;
 }
-a{
+
+a {
     text-decoration: none;
+}
+
+/* Media queries para hacer responsivo */
+@media (max-width: 1366px) {
+    .row {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 720px) {
+    .row {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
