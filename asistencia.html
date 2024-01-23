@@ -1,22 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Asistencia</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link rel="shortcut icon" href="/public/Logo NBP corto 15.png" type="image/x-icon">
+        <link rel="stylesheet" href="style.css">
+    </head>
 <body>
     <header>
         <div class="container d-flex align-items-center justify-content-center py-5">
-            <img class="img-fluid my-3" src="public/Copia de NBP bordo.JPG" alt="Imagen"></img>
+          <img class="img-fluid my-3" width="300" src="public/Copia de NBP bordo.JPG" alt="logo"></img>
         </div>
-        
-        <div class="container">
-            <!-- Contenido de la segunda sección, si es necesario -->
+        <h1 class="text-center display-4 mb-5 font-weight-bold">Contactos Asistencias</h1>
+      </header>
+      <main>
+        <div class="contenedor">
+            <div class="row" id="app"></div>
         </div>
-        
-        <h1 class="text-center display-4 mb-5 font-weight-bold">Formularios de Altas</h1>
-    </header>
-    <a href="public/Allianz/Alta de Agentes.pdf"></a>
+        <!-- Modal General -->
+<div class="modal fade" id="customModal" tabindex="-1" role="dialog" aria-labelledby="customModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="customModalLabel">Contenido del Modal</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- Contenido específico del modal -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+        <div class="modal fade" id="fileModal" tabindex="-1" role="dialog" aria-labelledby="fileModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="fileModalLabel">Contactos</h5>
+            </div>
+            <div class="modal-body" id="fileList"></div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger mt-3" data-dismiss="modal">Cerrar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="modalOverlay" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+          <div class="modal-content">
+            <div class="modal-body" id="modalBody">
+              <!-- Contenido del modal -->
+              <!-- Se actualizará con el contenido específico de cada tarjeta -->
+              <button class="btn btn-danger mt-3" onClick="closeModal()">Cerrar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      </main>
+    <footer class="footer">
+        <p>NBPro© 2023 - Todos los Derechos Reservados</p>
+      </footer>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+      <script src="script2.js"></script>
 </body>
 </html>

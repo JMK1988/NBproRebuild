@@ -192,7 +192,7 @@ const cardContainer = document.getElementById("cardContainer");
 // Recorrer el JSON y generar las cards con logo y botón
 for (const aseguradora in jsonData) {
     if (jsonData.hasOwnProperty(aseguradora)) {
-        const nombre = aseguradora; // Asumiendo que el nombre de la imagen es en minúsculas
+        const nombre = aseguradora.toLowerCase(); // Convertir el nombre a minúsculas
 
         // Crear la tarjeta
         const card = document.createElement("div");
@@ -218,7 +218,7 @@ for (const aseguradora in jsonData) {
         altaButton.type = "button";
         altaButton.className = "custom-button";
         altaButton.textContent = "Formulario";
-        
+
         // Agregar un evento al botón para llamar a la función openFileModal
         altaButton.addEventListener("click", () => openFileModal(aseguradora, jsonData[aseguradora]));
 
@@ -235,35 +235,217 @@ for (const aseguradora in jsonData) {
     }
 }
 
+// Asigna eventos a los botones
+document.querySelectorAll(".custom-button").forEach(function (button) {
+    button.addEventListener("click", function () {
+        const tipo = this.getAttribute("data-modal-type");
+        mostrarModal(tipo);
+    });
+});
+
+// También puedes cerrar el modal con el botón de cerrar
+function closeModal() {
+    $('#modalOverlay').modal('hide');
+}
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Asigna eventos solo a los botones con el ID "botonModal"
+    document.querySelectorAll("#botonModal").forEach(function (button) {
+        button.addEventListener("click", function () {
+            const tipo = button.getAttribute("data-tipo");
+            openModal(tipo);
+        });
+    });
+
+    // Resto del código...
+
+    function openModal(tipo) {
+        const modal = $("#modalOverlay");
+        const modalBody = $("#modalBody");
+
+        // Limpiar el contenido previo del modal
+        modalBody.empty();
+
+        // Utiliza un switch para determinar qué contenido cargar en el modal
+        switch (tipo) {
+            case 'info':
+                modalBody.html(`
+            <!-- Contenido para info -->
+            <h2 class="text-lg font-semibold">Requisitos de Alta de Código</h2>
+            <ul class="text-left">
+              <li>Formulario completo firmado y escaneado</li>
+              <li>Fotocopia de la factura</li>
+                     <li>Copia de CIPAS Credencial SSN de frente y dorso</li>
+                     <li>Fotocopia de frente y dorso del Documento de Identidad</li>
+                     <li>Inscripción de Ingresos Brutos / Convenio Multilateral actualizado</li>
+                    <li>Constancia de Inscripción de la AFIP</li>
+                     <li>Copia Constancia de CBU Bancario (no Banco online)</li>
+                     <li>Constancia Boleta de pago de matrícula SSN actualizada</li>
+                     <li>Pago de Libros Rubricados de Cobranza y Operaciones actualizada</li>
+                     <li>Constancia inscripción UIF actualizada</li>
+                   <li>Último pago de Monotributo</li>
+            </ul>
+            <button class="btn btn-danger mt-3" onClick="closeModal()">Cerrar</button>
+          `);
+                break;
+            case 'designaciones':
+                modalBody.html(`
+            <!-- Contenido para designaciones -->
+            <a href="/public/NBP Organizador Carta de nombramiento designacion .docx" class="custom-button">NBP Organizador Carta de nombramiento designacion</a>
+            <a href="/public/NBP Asegurado_ Carta de nombramiento designacion .docx" class="custom-button">NBP Asegurado Carta de nombramiento designacion</a>
+            <button class="btn btn-danger mt-3" onClick="closeModal()">Cerrar</button>
+          `);
+                break;
+            case 'contacto':
+                modalBody.html(`
+            <!-- Contenido para contacto -->
+            <p class="mb-2"><strong>Técnico:</strong> Cotizaciones de todos los Ramos</p>
+                 <a href="mailto:cotizaciones@nbpro.ar" class="custom-button">cotizaciones@nbpro.ar</a>
+                 <a href="tel:+11 5256 2262" class="custom-button"><strong>Verónica:</strong> 11 5256 2262</a>
+
+                 <p class="mt-4 mb-2"><strong>Comercial:</strong> Campañas, incentivos y promociones</p>
+                 <a href="mailto:cotizaciones@nbpro.ar" class="custom-button">cotizaciones@nbpro.ar</a>
+                 <a href="tel:+11 5256 2259" class="custom-button"><strong>Mariel:</strong> 11 5256 2259</a>
+
+                 <p class="mt-4 mb-2"><strong>Operaciones:</strong> Emisiones, renovaciones, endosos</p>
+                 <a href="mailto:operaciones@nbpro.ar" class="custom-button">operaciones@nbpro.ar</a>
+                 <a href="tel:+11 5256 2261" class="custom-button"><strong>Lucía:</strong> 11 5256 2261</a>
+
+                 <p class="mt-4 mb-2"><strong>Cobranzas:</strong> Medios de pago, cuponeras, comisiones</p>
+               <a href="mailto:cobranzas@nbpro.ar" class="custom-button">cobranzas@nbpro.ar</a>
+                 <a href="tel:+11 5256 2260" class="custom-button"><strong>Francisco:</strong> 11 5256 2260</a>
+                 <p class="mt-4 mb-2"><strong>Siniestros:</strong> Todas las Aseguradoras</p>
+                 <a href="mailto:siniestros@nbpro.ar" class="custom-button">siniestros@nbpro.ar</a>
+                 <a href="tel:+11 5256 2260" class="custom-button"><strong>Luján/Francisco:</strong> 11 5256 2260</a>
+
+                 <p class="mt-4 mb-2"><strong>Soporte:</strong> Altas de Códigos, Claves y accesos Aseguradoras</p>
+                 <a href="mailto:soporte@nbpro.ar" class="custom-button">soporte@nbpro.ar</a>
+                 <button class="btn btn-danger mt-3" onClick="closeModal()">Cerrar</button>
+          `);
+                break;
+            // Agrega más casos según sea necesario
+            default:
+                // Caso por defecto
+                modalBody.html('Contenido no disponible');
+        }
+
+        // Muestra el modal utilizando las funciones de Bootstrap
+        modal.modal("show");
+    }
+
+    // También puedes cerrar el modal con el botón de cerrar
+    function closeModal() {
+        $('#modalOverlay').modal('hide');
+    }
+});
+
+
+
 
 function openFileModal(aseguradora, archivos) {
     // Obtener el modal y el contenedor de archivos
-    const modal = document.getElementById("fileModal");
-    const fileListContainer = document.getElementById("fileList");
+    const modal = $("#fileModal");
 
     // Limpiar el contenido previo del contenedor de archivos
-    fileListContainer.innerHTML = "";
+    $("#fileList").empty();
 
     // Verificar si archivos está definido y tiene al menos un elemento
     if (archivos && archivos.length > 0) {
         // Crear elementos <a> para cada archivo y agregarlos al contenedor
         archivos.forEach((archivo) => {
-            const fileLink = document.createElement("a");
             const filePath = `public/${aseguradora}/${archivo}`;
-
-            fileLink.href = filePath;
-            fileLink.textContent = archivo;
-            fileLink.className = "custom-button d-block mb-2";
-            fileListContainer.appendChild(fileLink);
+            const fileLink = $("<a>")
+                .attr("href", filePath)
+                .text(archivo)
+                .addClass("custom-button d-block mb-2");
+            $("#fileList").append(fileLink);
         });
     } else {
         // Si archivos no está definido o está vacío, mostrar un mensaje o realizar alguna acción
-        fileListContainer.textContent = "No hay archivos disponibles.";
+        $("#fileList").text("No hay archivos disponibles.");
     }
 
-    // Mostrar el modal
-    $(modal).modal("show");
+    // Si el modal ya está abierto, no es necesario abrirlo de nuevo
+    if (!modal.data('bs.modal') || !modal.data('bs.modal').isShown) {
+        // Mostrar el modal solo si no está abierto
+        modal.modal("show");
+    }
 }
 
+
+
+
+// function mostrarModal(tipo) {
+//     // Aquí puedes personalizar el contenido del modal según el tipo
+//     // Podrías cargar datos desde un objeto, base de datos, o de cualquier manera que prefieras
+//     let contenidoModal = "";
+
+//     switch (tipo) {
+//         case "info":
+//             contenidoModal = `
+//                 <h2 className="text-lg font-semibold">Requisitos de Alta de Código</h2>
+//                 <ul className="text-left">
+//                     <li>Formulario completo firmado y escaneado</li>
+//                     <li>Fotocopia de la factura</li>
+//                     <li>Copia de CIPAS Credencial SSN de frente y dorso</li>
+//                     <li>Fotocopia de frente y dorso del Documento de Identidad</li>
+//                     <li>Inscripción de Ingresos Brutos / Convenio Multilateral actualizado</li>
+//                     <li>Constancia de Inscripción de la AFIP</li>
+//                     <li>Copia Constancia de CBU Bancario (no Banco online)</li>
+//                     <li>Constancia Boleta de pago de matrícula SSN actualizada</li>
+//                     <li>Pago de Libros Rubricados de Cobranza y Operaciones actualizada</li>
+//                     <li>Constancia inscripción UIF actualizada</li>
+//                     <li>Último pago de Monotributo</li>
+//                 </ul>
+
+//             `;
+//             break;
+//         case "designaciones":
+//             contenidoModal = `
+//                 <a href="/public/NBP Organizador Carta de nombramiento designacion .docx" class="custom-button">NBP Organizador Carta de nombramiento designacion</a>
+//                 <a href="/public/NBP Asegurado_ Carta de nombramiento designacion .docx" class="custom-button">NBP Asegurado Carta de nombramiento designacion</a>
+//                 <button class="btn btn-danger mt-3" onClick="closeModal()">Cerrar</button>
+//             `;
+//             break;
+//         case "contacto":
+//             contenidoModal = `
+//                 <p class="mb-2"><strong>Técnico:</strong> Cotizaciones de todos los Ramos</p>
+//                 <a href="mailto:cotizaciones@nbpro.ar" class="custom-button">cotizaciones@nbpro.ar</a>
+//                 <a href="tel:+11 5256 2262" class="custom-button"><strong>Verónica:</strong> 11 5256 2262</a>
+
+//                 <p class="mt-4 mb-2"><strong>Comercial:</strong> Campañas, incentivos y promociones</p>
+//                 <a href="mailto:cotizaciones@nbpro.ar" class="custom-button">cotizaciones@nbpro.ar</a>
+//                 <a href="tel:+11 5256 2259" class="custom-button"><strong>Mariel:</strong> 11 5256 2259</a>
+
+//                 <p class="mt-4 mb-2"><strong>Operaciones:</strong> Emisiones, renovaciones, endosos</p>
+//                 <a href="mailto:operaciones@nbpro.ar" class="custom-button">operaciones@nbpro.ar</a>
+//                 <a href="tel:+11 5256 2261" class="custom-button"><strong>Lucía:</strong> 11 5256 2261</a>
+
+//                 <p class="mt-4 mb-2"><strong>Cobranzas:</strong> Medios de pago, cuponeras, comisiones</p>
+//                 <a href="mailto:cobranzas@nbpro.ar" class="custom-button">cobranzas@nbpro.ar</a>
+//                 <a href="tel:+11 5256 2260" class="custom-button"><strong>Francisco:</strong> 11 5256 2260</a>
+
+//                 <p class="mt-4 mb-2"><strong>Siniestros:</strong> Todas las Aseguradoras</p>
+//                 <a href="mailto:siniestros@nbpro.ar" class="custom-button">siniestros@nbpro.ar</a>
+//                 <a href="tel:+11 5256 2260" class="custom-button"><strong>Luján/Francisco:</strong> 11 5256 2260</a>
+
+//                 <p class="mt-4 mb-2"><strong>Soporte:</strong> Altas de Códigos, Claves y accesos Aseguradoras</p>
+//                 <a href="mailto:soporte@nbpro.ar" class="custom-button">soporte@nbpro.ar</a>
+//                 <button class="btn btn-danger mt-3" onClick="closeModal()">Cerrar</button>
+//             `;
+//             break;
+//     }
+
+//     // Llama a la función para mostrar el modal con el contenido específico
+//     mostrarContenidoModal(contenidoModal);
+// }
+
+// function mostrarContenidoModal(contenido) {
+//     $("#modalBody").html(contenido);
+
+//     // Muestra el modal
+//     $('#modalOverlay').modal('show');
+// }
 
 

@@ -4,8 +4,20 @@
 
 .row {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(8, 1fr);
     gap: 10px; /* Ajusta el espacio entre las tarjetas */
+}
+/* Media queries para hacer responsivo */
+@media (max-width: 1366px) {
+    .row {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 720px) {
+    .row {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 .card-container {
@@ -13,13 +25,13 @@
     padding: 1rem;
     border-radius: 1rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    height: 18rem;
+    height: 14rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 15rem; /* Fijo en 18rem */
-    margin: 1rem; /* Ajusta el espacio entre las tarjetas */
+    width: 11rem;
+    margin: auto;
 }
 
 .image-container {
@@ -29,6 +41,7 @@
     overflow: hidden;
     border-radius: 1rem;
     width: 100%; /* La imagen ocupa el 100% del contenedor */
+    margin: auto;
 }
 
 .logo-img {
@@ -43,7 +56,7 @@
     align-items: center;
 }
 
-.custom-button {
+/* .custom-button {
     padding: 0.5rem 2rem;
     background-color: rgb(75, 85, 99);
     color: #ffffff;
@@ -53,25 +66,68 @@
     margin-top: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
+} */
+.custom-button {
+    text-align: center;
+    background-color: #4b5563; /* Color gris equivalente en Tailwind */
+    color: #ffffff; /* Color blanco en Tailwind */
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition-property: all;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+    width: 100%;
+    border: none;
+    font-size: smaller;
+    text-decoration: none;
+    margin-top: .25rem;
+    margin-bottom: .25rem;
 }
 
 .custom-button:hover {
     background-color: #d1d5db;
 }
 
+.custom-button:focus {
+    transform: scale(0.95); /* Escala del elemento al enfocar en Tailwind */
+}
+
+
 a {
     text-decoration: none;
 }
 
-/* Media queries para hacer responsivo */
-@media (max-width: 1366px) {
-    .row {
-        grid-template-columns: repeat(4, 1fr);
-    }
+
+
+
+#modalOverlay {
+    display: none;
+    background: rgba(0, 0, 0, 0.3);
+  }
+  
+  .modal-body {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+  }
+.modal-content{
+    width: 75%;
+    align-items: center;
 }
 
-@media (max-width: 720px) {
-    .row {
-        grid-template-columns: repeat(2, 1fr);
-    }
+li{
+    text-decoration: none;
+} 
+.borde{
+    border: 1px solid red;
+}
+.footer{
+    text-align: center;
 }
