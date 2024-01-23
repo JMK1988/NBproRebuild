@@ -194,7 +194,7 @@ function createCard(nombre, contactos) {
   
     // Crear la imagen (logo) de la aseguradora
     const logoImg = document.createElement("img");
-    logoImg.src = `public/${nombre.toLowerCase()}.png`; // Asumiendo que el nombre de la imagen está en minúsculas
+    logoImg.src = `public/${nombre}.png`; // Asumiendo que el nombre de la imagen está en minúsculas
     logoImg.alt = nombre;
     logoImg.className = "logo-img"; // Clase personalizada para la imagen
     imageContainer.appendChild(logoImg);

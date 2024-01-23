@@ -192,7 +192,7 @@ const cardContainer = document.getElementById("cardContainer");
 // Recorrer el JSON y generar las cards con logo y botón
 for (const aseguradora in jsonData) {
     if (jsonData.hasOwnProperty(aseguradora)) {
-        const nombre = aseguradora.toLowerCase(); // Convertir el nombre a minúsculas
+        const nombre = aseguradora; // Convertir el nombre a minúsculas
 
         // Crear la tarjeta
         const card = document.createElement("div");
