@@ -168,6 +168,7 @@ function openFileModal(aseguradora) {
 
       const contactParagraph = document.createElement("p");
       const link = document.createElement("a");
+      contactParagraph.className ="w-95"
       link.href = "javascript:void(0);";
       link.textContent = tipoContacto;
       link.className = "custom-button"
