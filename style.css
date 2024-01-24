@@ -1,5 +1,5 @@
 .contenedor {
-    margin: 5rem;
+    margin: auto;
 }
 
 .row {
@@ -130,4 +130,5 @@ li{
 }
 .footer{
     text-align: center;
+    margin-top: 5rem;
 }
