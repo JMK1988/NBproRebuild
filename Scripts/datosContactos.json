@@ -6,7 +6,9 @@
         "WhatsApp": "+5491133141563",
         "web": null,
         "telefono": "+5491143299191",
-        "telefono-": "+5408008882432"
+        "telefono-": "+5408008882432",
+        "GooglePlay": "https://play.google.com/store/apps/details?id=ar.com.allianz.mobile.asegurados.activity&hl=es",
+        "AppleStore":"https://apps.apple.com/ar/app/allianz-mobile-asegurados/id945694768"
       }
     },
     {
@@ -53,7 +55,9 @@
         "telefono": "+5498003332927",
         "telefono-": "08004444587",
         "alarma": "08006662202",
-        "remolque": "1141360691"
+        "remolque": "1141360691",
+        "GooglePlay":"https://play.google.com/store/apps/details?id=ar.com.mihdi.argentina",
+        "AppleStore":"https://apps.apple.com/ar/app/mi-hdi/id1631877172"
       }
     },
     {
@@ -87,7 +91,9 @@
       "contactos": {
         "WhatsApp": "+5491139898000",
         "web": "https://tuasistencia.redsos.com.ar/",
-        "email": "info@segurosrivadavia.com"
+        "email": "info@segurosrivadavia.com",
+        "GooglePlay": "https://play.google.com/store/apps/details?id=com.rivadavia.Asegurados&hl=es_AR&gl=US&pli=1",
+        "AppleStore": "https://apps.apple.com/ar/app/seguros-rivadavia/id1038103741"
       }
     },
     {
