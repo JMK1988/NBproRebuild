@@ -1,4 +1,147 @@
-const aseguradoras = '/Scripts/datosContactos.json'
+const aseguradoras = {
+  "companias": [
+    {
+      "nombre": "Allianz",
+      "contactos": {
+        "WhatsApp": "+5491133141563",
+        "web": null,
+        "telefono": "+5491143299191",
+        "telefono-": "+5408008882432",
+        "GooglePlay": "https://play.google.com/store/apps/details?id=ar.com.allianz.mobile.asegurados.activity&hl=es",
+        "AppleStore":"https://apps.apple.com/ar/app/allianz-mobile-asegurados/id945694768"
+      }
+    },
+    {
+      "nombre": "ATM",
+      "contactos": {
+        "WhatsApp": "1568262355",
+        "SMS": "70703",
+        "telefono": "08103450492",
+        "telefono-": "08002227854"
+      }
+    },
+    {
+      "nombre": "Experta ART",
+      "contactos": {
+        "WhatsApp": "+ 5491147041830",
+        "telefono": "08007777278",
+        "web": "https://www.experta.com.ar/contactenos/",
+        "email": "clientes@experta.com.ar"
+      }
+    },
+    {
+      "nombre": "Federación",
+      "contactos": {
+        "WhatsApp": "+5492214290200",
+        "SMS": "70703",
+        "telefono": "08002220022",
+        "telefono-": "08008000022"
+      }
+    },
+    {
+      "nombre": "Galeno ART",
+      "contactos": {
+        "telefono": "08007775433",
+        "telefono-": "+5491138744660",
+        "email": "callseguros@galenoseguros.com.ar"
+      }
+    },
+    {
+      "nombre": "HDI",
+      "contactos": {
+        "WhatsApp": "+5491139862669",
+        "web": null,
+        "sms": null,
+        "telefono": "+5498003332927",
+        "telefono-": "08004444587",
+        "alarma": "08006662202",
+        "remolque": "1141360691",
+        "GooglePlay":"https://play.google.com/store/apps/details?id=ar.com.mihdi.argentina",
+        "AppleStore":"https://apps.apple.com/ar/app/mi-hdi/id1631877172"
+      }
+    },
+    {
+      "nombre": "Mapfre",
+      "contactos": {
+        "WhatsApp": "+5491162996922",
+        "telefono": "08009997424"
+      }
+    },
+    {
+      "nombre": "Mercantil",
+      "contactos": {
+        "WhatsApp": "1128080012",
+        "web": "https://tuasistencia.redsos.com.ar/home/login",
+        "sms": "70703 \"Patente\"",
+        "email": "asistenciamecanica@lamercantil.com.ar",
+        "telefono": "08007772634",
+        "telefono-": "1143355792"
+      }
+    },
+    {
+      "nombre": "Provincia Seguros",
+      "contactos": {
+        "WhatsApp": "+5491121837633",
+        "telefono": "08102222444",
+        "telefono-": "01143313887"
+      }
+    },
+    {
+      "nombre": "Rivadavia",
+      "contactos": {
+        "WhatsApp": "+5491139898000",
+        "web": "https://tuasistencia.redsos.com.ar/",
+        "email": "info@segurosrivadavia.com",
+        "GooglePlay": "https://play.google.com/store/apps/details?id=com.rivadavia.Asegurados&hl=es_AR&gl=US&pli=1",
+        "AppleStore": "https://apps.apple.com/ar/app/seguros-rivadavia/id1038103741"
+      }
+    },
+    {
+      "nombre": "RIO URUGUAY",
+      "contactos": {
+        "WhatsApp": "+5493442657777",
+        "telefono": "08008887787",
+        "remolque": "08004441441",
+        "web": "www.rus.com.ar"
+      }
+    },
+    {
+      "nombre": "SMG",
+      "contactos": {
+        "telefono": "08002227854",
+        "telefono-": "08103333764"
+      }
+    },
+    {
+      "nombre": "Sancor",
+      "contactos": {
+        "WhatsApp": "+5493493520650",
+        "remolque": "08003332766",
+        "telefono": "08004442850",
+        "siniestros": "08007774643"
+      }
+    },
+    {
+      "nombre": "Victoria",
+      "contactos": {
+        "telefono": "43221100",
+        "WhatsApp": "1128080012",
+        "web": "www.victoria.com.ar/seguros-de-automotores-victoria"
+      }
+    },
+    {
+      "nombre": "Zurich",
+      "contactos": {
+        "WhatsApp": "+5491139862669",
+        "web": "https://zurihelp.redsos.com.ar/home/login",
+        "sms": "70 70 3 SMS con SOS+Patente",
+        "telefono": "08003339874",
+        "remolque": "08002221600",
+        "exterior": "1141298100"
+      }
+    }
+  ]
+}
 
 // Obtener el contenedor donde se agregarán las tarjetas
 const cardContainer = document.getElementById("app");
