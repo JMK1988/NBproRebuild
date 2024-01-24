@@ -13,12 +13,20 @@ main{
 }
 /* Media queries para hacer responsivo */
 @media (max-width: 1366px) {
+    main{
+        width: 100%;
+        margin: 0rem;
+    }
     .row {
         grid-template-columns: repeat(4, 1fr);
     }
 }
 
 @media (max-width: 720px) {
+    main{
+        width: 100%;
+        margin: 0;
+    }
     .row {
         grid-template-columns: repeat(2, 1fr);
     }
