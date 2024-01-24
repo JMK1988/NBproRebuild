@@ -1,3 +1,7 @@
+main{
+    width: 95%;
+    margin: auto;
+}
 .contenedor {
     margin: auto;
 }
@@ -30,7 +34,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 11rem;
+    width: 10rem;
     margin: auto;
 }
 
@@ -39,7 +43,6 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    border-radius: 1rem;
     width: 100%; /* La imagen ocupa el 100% del contenedor */
     margin: auto;
 }
@@ -80,7 +83,7 @@
     transition-property: all;
     transition-duration: 0.2s;
     transition-timing-function: ease-out;
-    width: 100%;
+    width: 9rem;
     border: none;
     font-size: smaller;
     text-decoration: none;
